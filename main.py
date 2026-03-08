@@ -121,11 +121,3 @@ class Estoque:
         except Exception as e:
             print(f"Erro no alerta de estoque: {e}")
 
-        
-estoque = Estoque()
-
-produto_1 = Produto("PS5" , 1 , "eletronico" , 2 , 3500.45, "video game playstation 5 da sony", "sony")
-
-estoque.cadastrar_produto(produto_1)
-
-estoque.exibir_estoque()
