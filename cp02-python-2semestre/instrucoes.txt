@@ -1,0 +1,26 @@
+O que foi mantido e refatorado
+
+Produto e Estoque tiveram seus métodos existentes preservados, com pequenas melhorias de validação e feedback nas mensagens.
+remover_estoque agora aceita um parâmetro motivo para rastrear a origem de cada saída (ex: "venda #1").
+
+
+O que foi adicionado
+Produto — Descontos e Promoções
+
+desconto_percentual: atributo por produto (padrão 0%)
+preco_com_desconto: propriedade calculada automaticamente
+aplicar_desconto(percentual): define a promoção do produto
+
+Venda — Registro e Recibo
+
+adicionar_item(codigo, qtd): valida estoque antes de adicionar ao carrinho
+aplicar_desconto_global(%): desconto sobre o total (cupom, promoção por volume)
+finalizar_venda(): debita o estoque automaticamente e retorna os dados
+emitir_recibo(): imprime recibo formatado com subtotal, desconto e total
+
+Relatorio — Relatórios e Histórico
+
+registrar_venda(dados): salva a venda finalizada no histórico
+relatorio_vendas(): detalha todas as vendas com cliente, produtos, datas e totais
+relatorio_estoque(): exibe inventário atual com valor total por produto
+historico_movimentacoes(): lista todas as entradas e saídas com motivo rastreável
